@@ -1,4 +1,4 @@
-# MappoolSheetToJson
+# MappoolConversionScripts
 Scuffed python script to pull maps from a mappool spreadsheet
 
 currently supports mappools with standard tournament mods + easy and flashlight
