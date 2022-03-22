@@ -9,7 +9,7 @@ def parsePool(name: str):
         lines = file.readlines()
         lines = [line.rstrip().lower().split('\t') for line in lines]
     modregex = "(nm)|(hd)|(hr)|(dt)|(fm)|(tb)|(ez)|(fl)" # halftime not included for now
-    idregex = "[\d]{4,}$" # matching series of 4 digits or more should work unless the pool is mostly made up of beatmaps w/ id < 4 digits (using 4 because bpm is usually 3 digits)
+    idregex = "[\d]{4,}$" # match 4+ digits as beatmap id, can't differentiate <4 from BPM 
 
     modindex = findFreqIndex(lines, modregex)
     idindex = findFreqIndex(lines, idregex)
@@ -104,7 +104,7 @@ def checkForLabel(line: list) -> str:
 
 
 def main():
-    parsePool((input("Enter file name: ")))
+    parsePool(input("Enter file name: "))
 
 
 
